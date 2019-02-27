@@ -6,7 +6,9 @@ if [[ "$0" == "${BASH_SOURCE[0]}" ]]; then
     exit 1
 fi
 
-export PYAV_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.."; pwd)"
+cd $(dirname "${BASH_SOURCE[0]}")/..
+export PYAV_ROOT=$(pwd)
+# export PYAV_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.."; pwd)"
 
 if [[ "$TRAVIS" ]]; then
     PYAV_LIBRARY=$LIBRARY
